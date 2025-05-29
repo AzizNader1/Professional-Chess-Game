@@ -1,0 +1,182 @@
+/* Add custom styles for the chess game */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Chess board styles */
+.chess-board {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Chess piece animations */
+.chess-piece {
+  transition: transform 0.2s ease-in-out;
+}
+
+.chess-piece:hover {
+  transform: scale(1.15);
+}
+
+/* Custom highlight effects */
+.valid-move-highlight {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background-color: rgba(0, 128, 0, 0.4);
+  pointer-events: none;
+}
+
+.last-move-highlight {
+  background-color: rgba(255, 215, 0, 0.3);
+}
+
+.check-highlight {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+/* Game controls */
+.game-control-btn {
+  @apply px-4 py-2 rounded-md transition-all duration-200;
+}
+
+.game-control-btn:hover {
+  @apply transform scale-105;
+}
+
+.primary-btn {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.secondary-btn {
+  @apply bg-gray-200 hover:bg-gray-300;
+}
+
+.success-btn {
+  @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.danger-btn {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+/* Custom scrollbar for move history */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Game timer pulse animation */
+@keyframes timer-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.timer-active {
+  animation: timer-pulse 1.5s infinite;
+}
+
+.timer-low {
+  color: #e53e3e;
+  font-weight: bold;
+}
+
+/* Captured pieces display */
+.captured-piece {
+  display: inline-block;
+  margin: 0 2px;
+  opacity: 0.7;
+}
+
+/* Game status indicators */
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-active {
+  background-color: #48bb78;
+}
+
+.status-check {
+  background-color: #ecc94b;
+}
+
+.status-checkmate {
+  background-color: #e53e3e;
+}
+
+.status-stalemate {
+  background-color: #718096;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chess-board {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-support {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+}
+
+/* Piece promotion modal */
+.promotion-option {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.promotion-option:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Game settings modal animations */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
