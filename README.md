@@ -67,4 +67,4 @@
 - Piece movement indicators
 - Visual check and checkmate alerts
 
-Enjoy playing chess!
+Enjoy playing chess https://rilbccct.manus.space/ !
