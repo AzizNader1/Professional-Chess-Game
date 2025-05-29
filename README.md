@@ -68,3 +68,4 @@
 - Visual check and checkmate alerts
 
 Enjoy playing chess https://rilbccct.manus.space/ !
+Made from a to z using Ai model and this was a test for the vibe coding and see what i can build with the ai using languages and framework that i have no experience in it.
